@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: cicdbackkubernetes 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cicdbackkubernetes
+  template:
+    metadata:
+      labels:
+        app: cicdbackkubernetes 
+    spec:
+      containers:
+        - name: cicdbackkubernetes 
+          image: cdciproyectorgcn.azurecr.io/cicdbackkubernetes
+          ports:
+          - containerPort: 80
