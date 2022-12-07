@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: cicdbackazureprueba 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cicdbackazureprueba
+  template:
+    metadata:
+      labels:
+        app: cicdbackazureprueba 
+    spec:
+      containers:
+        - name: cicdbackazureprueba 
+          image: cdciproyectorgcn.azurecr.io/cicdbackazureprueba
+          ports:
+          - containerPort: 80
